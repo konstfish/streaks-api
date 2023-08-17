@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Streaks</title>
+
+    <script src="https://kit.fontawesome.com/f0ee9c51e4.js" crossorigin="anonymous"></script>
+
+    <style>
+      body, html{
+        background-color: #FF704C;
+      }
+
+      .container{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+
+        margin: 24px;
+      }
+
+      .task{
+        margin: 24px;
+
+        height: 150px;
+        width: 150px;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+
+        color: #FFFFFF;
+      }
+
+      .task-title{
+        font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+        text-align: center;
+      }
+
+      .circle{
+        border-radius: 50%;
+        height: 100px;
+        width: 100px;
+        text-align: center;
+        border: 8px #70453B solid;
+        background-color: #FF704C;
+        color: black;
+        font-family: Font Awesome\ 5 Free;
+        
+        /* center image */
+        font-size: 36px;
+        font-weight: 900;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        margin-bottom: 12px;
+      }
+
+      .completed{
+        background-color: #FFFFFF;
+        border-color: #FFFFFF;
+      }
+
+      .missed{
+        color: white;
+      }
+
+      .icon-test{
+        font-family: Font Awesome\ 5 Free;
+        
+        /* center image */
+        font-size: 36px;
+        font-weight: 900;
+      }
+
+    </style>
+</head>
+<body>
+  <!--
+  <div class="icon-test">
+    <i class="fa-solid fa-broom"></i>
+    <i class="fa-solid fa-person-running"></i>
+  </div>
+  -->
+
+  <div class="container">
+    {% for task in res %}
+      <div class="task">
+        <div class="circle {{ 'completed' if task.entry_type else 'missed' }}">
+          <i class="{{ task.icon }}"></i>
+        </div>
+
+        <span class="task-title">
+          {{ task.title }}
+        </span>
+      </div>
+    {% endfor %}
+    <!--
+    {% if res|length % 2 != 0 %}
+      <div class="task"></div>
+    {% endif %}
+    -->
+  </div>
+</body>
+</html>
+
+<!--
+{'title': 'Tidy Up, 20:00', 
+'icon': 'ic_broom', 
+'entry_timestamp': '2022-05-24T16:57:19.721Z', 
+'entry_type': 1}
+-->

@@ -1,0 +1,12 @@
+version: '3.7'
+services:
+  streaks_api:
+    build: ./
+    ports:
+      - 4000:4000
+    volumes:
+      - streaks_data:/opt/data
+    restart: always
+
+volumes:
+  streaks_data:
