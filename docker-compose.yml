@@ -6,6 +6,8 @@ services:
       - 4000:4000
     volumes:
       - streaks_data:/opt/data
+    environment:
+      - REQ_KEY=key
     restart: always
 
 volumes:

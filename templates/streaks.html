@@ -9,8 +9,95 @@
     <script src="https://kit.fontawesome.com/f0ee9c51e4.js" crossorigin="anonymous"></script>
 
     <style>
+      {% if theme == 'default' or theme == 'orange' %}
+        :root {
+          --color-background: #FF704C;
+          --color-task-border: #70453B;
+        }
+      {% elif theme == 'pink' %}
+        :root {
+            --color-background: #c77cb5;
+            --color-task-border: #5F495A;
+        }
+      {% elif theme == 'yellow' %}
+        :root {
+            --color-background: #edad3c;
+            --color-task-border: #6a572c;
+          }
+      {% elif theme == 'purple' %}
+        :root {
+            --color-background: #903ecb;
+            --color-task-border: #4f3660;
+          }
+      {% elif theme == 'green' %}
+        :root {
+            --color-background: #a0bf6b;
+            --color-task-border: #535c43;
+          }
+      {% elif theme == 'hotpink' %}
+        :root {
+            --color-background: #c93297;
+            --color-task-border: #5e2f50;
+          }
+      {% elif theme == 'blue' %}
+        :root {
+            --color-background: #548dc4;
+            --color-task-border: #3c4e5f;
+          }
+      {% elif theme == 'red' %}
+        :root {
+            --color-background: #e53653;
+            --color-task-border: #662e3b;
+          }
+      {% elif theme == 'lightgreen' %}
+        :root {
+            --color-background: #92c244;
+            --color-task-border: #505e33;
+          }
+      {% elif theme == 'cyan' %}
+        :root {
+            --color-background: #5bb0aa;
+            --color-task-border: #3b5856;
+          }
+      {% elif theme == 'darkred' %}
+        :root {
+            --color-background: #be5450;
+            --color-task-border: #5c3d3b;
+          }
+      {% elif theme == 'brown' %}
+        :root {
+            --color-background: #8c653b;
+            --color-task-border: #4e4235;
+          }
+      {% elif theme == 'navy' %}
+        :root {
+            --color-background: #4a5c8c;
+            --color-task-border: #3a3f4e;
+          }
+      {% elif theme == 'darkgreen' %}
+        :root {
+            --color-background: #575434;
+            --color-task-border: #3e3d33;
+          }
+      {% elif theme == 'gray' %}
+        :root {
+            --color-background: #777777;
+            --color-task-border: #474747;
+          }
+      {% elif theme == 'darkgray' %}
+        :root {
+            --color-background: #373737;
+            --color-task-border: #5d5d5d;
+          }
+      {% else %}
+        :root {
+          --color-background: #FF704C;
+          --color-task-border: #70453B;
+        }
+      {% endif %}
+
       body, html{
-        background-color: #FF704C;
+        background-color: var(--color-background);
       }
 
       .container{
@@ -33,7 +120,7 @@
         align-items: center;
         flex-wrap: wrap;
 
-        color: #FFFFFF;
+        color: white;
       }
 
       .task-title{
@@ -46,8 +133,8 @@
         height: 100px;
         width: 100px;
         text-align: center;
-        border: 8px #70453B solid;
-        background-color: #FF704C;
+        border: 8px var(--color-task-border) solid;
+        background-color: var(--color-background);
         color: black;
         font-family: Font Awesome\ 5 Free;
         
@@ -62,8 +149,8 @@
       }
 
       .completed{
-        background-color: #FFFFFF;
-        border-color: #FFFFFF;
+        background-color: white;
+        border-color: white;
       }
 
       .missed{
@@ -89,7 +176,7 @@
   -->
 
   <div class="container">
-    {% for task in res %}
+    {% for task in tasks %}
       <div class="task">
         <div class="circle {{ 'completed' if task.entry_type else 'missed' }}">
           <i class="{{ task.icon }}"></i>
