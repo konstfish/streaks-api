@@ -8,5 +8,5 @@ def authorize_request():
     auth_key = request.args.get('key')
     key = os.environ.get('REQ_KEY')
 
-    if auth_key != key:
+    if key != None and auth_key != key:
         return {401: "unauthorized"}, 401
