@@ -1,4 +1,6 @@
 # streaks-api
+[![Publish](https://github.com/konstfish/streaks-api/actions/workflows/publish.yml/badge.svg)](https://github.com/konstfish/streaks-api/actions/workflows/publish.yml)
+
 Made for [Streaks](https://streaks.app/) to easily display completed tasks in an embeddable iframe.
 
 ![demo](.github/images/demo.png)
