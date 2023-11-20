@@ -36,4 +36,4 @@ jobs:
           push: true
           tags: |
             ghcr.io/konstfish/streaks-api:${{ github.sha }}
-            ghcr.io/konstfish/streaps-api:latest
+            ghcr.io/konstfish/streaks-api:latest
