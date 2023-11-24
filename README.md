@@ -12,14 +12,14 @@ https://www.icloud.com/shortcuts/ff9b3e45effd49ddac8e0ba91b61543e
 
 ## Deployment
 ```
-docker pull ghrc.io/konstfish/streaks-api:latest
+docker pull ghcr.io/konstfish/streaks-api:latest
 ```
 
 ```yaml
 version: '3.7'
 services:
   streaks_api:
-    image: ghrc.io/konstfish/streaks-api:latest
+    image: ghcr.io/konstfish/streaks-api:latest
     ports:
       - 4000:4000
     volumes:
